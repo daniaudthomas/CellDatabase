@@ -1,0 +1,1 @@
+enum type {circular, linear};

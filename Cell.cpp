@@ -1,7 +1,6 @@
 #include "Cell.h"
 
-
-int Cell::counter=0;
+// Constructor
 
 Cell::Cell(double size,vector<string>proteinList) 
 : size(size),

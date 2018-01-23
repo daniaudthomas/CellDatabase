@@ -1,15 +1,24 @@
+#include <string>
 #include <iostream>
-#include "Cell.h" //Ne pas oublier
-#include <vector>
+
+#include "Database.h"
+#include "menu.h"
+
+
+using namespace nlohmann;
 using namespace std;
 
-int main()
-{
-    vector<string> proteinList;
-    proteinList.push_back("P0");
-    proteinList.push_back("P1");
-    proteinList.push_back("P2");
 
-    c1(4,proteinList);
-    cout<< "les proteines sont: "<< <<"\n";
+int main(int argc, char** argv) {
+
+    // Todo : Faire des try catch pour s'assurer de l'exécution des fonctions add et del
+    // Todo : Afficher Message si array eukaryote / prokaryote vide
+    // Todo : Mettre des sécurités en place
+
+    Database bdd;
+    selectMenu(bdd);
+
+    cout <<  getPath() << endl
+
+    return 0;
 }

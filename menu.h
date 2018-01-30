@@ -2,7 +2,7 @@
 
 #include <string>
 #include <iostream>
-#include "../lib/json.hpp"
+#include <vector>
 #include "addCell.h"
 
 using namespace std;
@@ -17,7 +17,7 @@ void displayMenu();
  * Creation of the menu
  * @param bdd
  */
-void selectMenu(Database bdd);
+void selectMenu(Repository bdd);
 
 /**
  * Get path app's execution

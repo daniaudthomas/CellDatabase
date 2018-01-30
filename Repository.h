@@ -2,7 +2,7 @@
 
 #include <string>
 #include <iostream>
-#include <list>
+#include <vector>
 #include <algorithm>
 
 #include "Eukaryote.h"
@@ -29,7 +29,7 @@ public:
      * Set array Eukaryote
      * @param arrayEukaryote
      */
-    void setEukaryoteList(vector<Eukaryote> EukaryoteList);
+    void setEukaryoteList(vector<Eukaryote> eukaryoteList);
 
 
     /**
@@ -43,42 +43,42 @@ public:
      * Set array Prokaryote
      * @param arrayProkaryote
      */
-    void setProkaryoteList(vector<Prokaryote> ProkaryoteList);
+    void setProkaryoteList(vector<Prokaryote> prokaryoteList);
 
 
     /**
      * Add Eukaryote
      * @param euk
      */
-    void addEukaryote(Eukaryote euk);
+    void addEukaryote(Eukaryote eukaryote);
 
 
     /**
      * Add Prokaryote by id
      * @param pro
      */
-    void addProkaryote(Prokaryote pro);
+    void addProkaryote(Prokaryote prokaryote);
 
 
     /**
      * Delete Eukaryote by id
      * @param id
      */
-    void delEukaryoteById(string id);
+    void delEukaryoteById(int id);
 
 
     /**
      * Delete Prokaryote
      * @param id
      */
-    void delProkaryoteById(string id);
+    void delProkaryoteById(int id);
 
 
     /**
      * Delete a cell by id
      * @param id
      */
-    void delCellById(string id);
+    void delCellById(int id);
 
 
     /**
@@ -98,6 +98,98 @@ public:
  */
 ostream & operator<<(ostream &out, const Database &d);
 
+ /**
+     * Display Cell by Id
+     * @param id
+     */
+    void displayCellById(int id);
+
+    /**
+     * Display Prokaryote by Id
+     * @param id
+     */
+    void displayProkaryoteById(int id);
+
+    /**
+     * Display Eukaryote by Id
+     * @param id
+     */
+    void displayEukaryoteById(int id);
+
+
+    /**
+     * Display all Prokaryote
+     */
+    void displayOnlyProkaryote();
+
+
+    /**
+     * Display all Eukaryote
+     */
+    void displayOnlyEukaryote();
+
+
+    /**
+     * Display all Cell between a defined size
+     * @param min
+     * @param max
+     */
+    void displayCellSizeBetween(double min, double max);
+
+    /**
+     * Display Eukaryote between a defined size
+     * @param min
+     * @param max
+     */
+    void displayEukaryoteSizeBetween(double min, double max);
+
+    /**
+     * Display Prokaryote between a defined size
+     * @param min
+     * @param max
+     */
+    void displayProkaryoteSizeBetween(double min, double max);
+
+
+    /**
+     * Display all Cell having a chromosome with a defined gene
+     * @param idGene
+     */
+    void displayCellHavingChromosomeExprimedGene(int idGene);
+
+    /**
+     * Display all Prokaryote having a chromosome with a defined gene
+     * @param idGene
+     */
+    void displayProkaryoteHavingChromosomeExprimedGene(int idGene);
+
+    /**
+     * Display all Eukaryote having a chromosome with a defined gene
+     * @param idGene
+     */
+    void displayEukaryoteHavingChromosomeExprimedGene(int idGene);
+
+
+
+    /**
+     * Display all Cell sort by size
+     */
+    void displayCellBySize();
+
+
+};
+
+
+/**
+ * Override operator <<
+ * @param out
+ * @param d
+ * @return
+ */
+ostream & operator<<(ostream &out, const Database &d);
+
+
+
 
    
 
@@ -106,5 +198,5 @@ ostream & operator<<(ostream &out, const Database &d);
 
 
 private:
-    vector<Eukaryote> EukaryoteList;
-    vector<Prokaryote> ProkaryoteList;
+    vector<Eukaryote> eukaryoteList;
+    vector<Prokaryote> prokaryoteList;

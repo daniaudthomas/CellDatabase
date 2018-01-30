@@ -3,7 +3,7 @@
 #include <fstream>
 #include <zconf.h>
 #include <unistd.h>
-#include "../lib/json.hpp"
+
 #include "addCell.h"
 #include "Database.h"
 
@@ -27,15 +27,15 @@ void displayMenu(){
     cout << "6.  Display all Cell between a defined size" << endl;
     cout << "7.  Display all Cell having a chromosome with a defined gene" << endl;
     cout << "8.  Display all Cell sort by size" << endl;
-    cout << "9.  Importation Database" << endl;
-    cout << "10. Exportation Database" << endl;
+    // cout << "9.  Importation Database" << endl;
+    // cout << "10. Exportation Database" << endl;
     cout << " ------------------------------------------------------------------------ " << endl;
 }
 
 void selectMenu(Database bdd) {
 
     cout << "\n\n ######################## \n" << endl;
-    cout << "   Welcome to SimpleBio \n" << endl;
+    cout << "   Welcome to CellsDatabase \n" << endl;
     cout << " ######################## \n\n" << endl;
 
     displayMenu();
@@ -49,12 +49,12 @@ void selectMenu(Database bdd) {
 
         switch (choice) {
             case 1 : {
-                entryCell(bdd);
+                genereCell(bdd);
                 break;
             }
 
             case 2 : {
-                string idCell;
+                int idCell;
                 cout << "Enter the cell's id that you want to delete" << endl;
                 cin >> idCell;
                 cout << "\n" << endl;
@@ -66,7 +66,7 @@ void selectMenu(Database bdd) {
             }
 
             case 3 : {
-                string id;
+                int id;
                 cout << "Enter the cell's id that you want to see" << endl;
                 cin >> id;
                 cout << "\n" << endl;
@@ -106,7 +106,7 @@ void selectMenu(Database bdd) {
 
             case 7 : {
                 cout << "\n" << endl;
-                string idGene;
+                int idGene;
                 cout << "Enter the gene's id" << endl;
                 cin >> idGene;
                 cout << "\n" << endl;
@@ -122,24 +122,24 @@ void selectMenu(Database bdd) {
                 break;
             }
 
-            case 9 : {
-                ifstream data(path + "/data.json");
-                json jsonData;
-                data >> jsonData;
-                bdd.setArrayEukaryote(jsonData["arrayEukaryote"]);
-                bdd.setArrayProkaryote(jsonData["arrayProkaryote"]);
-                cout << "Success Importation \n" << endl;
-                displayMenu();
-                break;
-            }
+            // case 9 : {
+            //     ifstream data(path + "/data.json");
+            //     json jsonData;
+            //     data >> jsonData;
+            //     bdd.setArrayEukaryote(jsonData["arrayEukaryote"]);
+            //     bdd.setArrayProkaryote(jsonData["arrayProkaryote"]);
+            //     cout << "Success Importation \n" << endl;
+            //     displayMenu();
+            //     break;
+            // }
 
-            case 10: {
-                json jsonData = bdd;
-                ofstream o(path + "/data.json");
-                o << setw(4) << jsonData;
-                cout << "Success Exportation \n" << endl;
-                break;
-            }
+            // case 10: {
+            //     json jsonData = bdd;
+            //     ofstream o(path + "/data.json");
+            //     o << setw(4) << jsonData;
+            //     cout << "Success Exportation \n" << endl;
+            //     break;
+            // }
 
             case 0: {
                 cout << "\nMay the force be with you \n\n" << endl;

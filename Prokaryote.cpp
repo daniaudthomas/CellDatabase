@@ -17,13 +17,13 @@ void Prokaryote::setChromosome(Chromosome chromosome) {
     this->chromosomePro = chromosome;
 }
 
-string Prokaryote::getBacteriumName() const {
-    return this->bateriumName;
-}
+// string Prokaryote::getBacteriumName() const {
+//     return this->bateriumName;
+// }
 
-void Prokaryote::setBacteriumName(string bacteriumName) {
-    this->bacteriumName = bacteriumName;
-}
+// void Prokaryote::setBacteriumName(string bacteriumName) {
+//     this->bacteriumName = bacteriumName;
+// }
 
 // Display
 

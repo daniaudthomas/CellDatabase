@@ -39,14 +39,14 @@ public:
      * Get Bacterium
      * @return
      */
-    string getBacteriumName() const;
+    //string getBacteriumName() const;
 
 
     /**
      * Set Chromosome
      * @param bacteriumName
      */
-    void setBacterimName(string bacteriumName);
+    //void setBacterimName(string bacteriumName);
 
 
      /**
@@ -74,7 +74,7 @@ ostream & operator<<(ostream &out, const Prokaryote &p);
 
 
 private:
-   string bacteriumName
+//string bacteriumName
    Chromosome chromosomePro
 
 };

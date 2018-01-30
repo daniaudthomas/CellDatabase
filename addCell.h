@@ -46,7 +46,7 @@ Prokaryote createProkaryote();
  * Allow to enter manually the information of one cell
  * @param bdd
  */
-void entryCell(Database bdd);
+void genereCell(Repository bdd);
 
 
 

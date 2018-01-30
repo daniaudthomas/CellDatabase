@@ -2,7 +2,7 @@
 
 
 Protein createProtein(){
-    string idProt;
+    int idProt;
     string nameProt;
 
     cout << "Enter the id of this protein?" << endl;
@@ -32,43 +32,43 @@ Gene createGene(){
 }
 
 Chromosome createChromosome(){
-    string nameChr;
+    string chroName;
     string type;
-    int typeCL;
-    int nbGene = 0;
+    int typeChro;
+    int nombreGene = 0;
 
     cout << "Enter the name of this chromosome?" << endl;
-    cin >> nameChr;
+    cin >> chroName;
 
     cout << "Give me the type of this chromosome (0 = Circle; 1 = Line)?" << endl;
-    cin >> typeCL;
+    cin >> typeChro;
 
-    if(typeCL == 1) {
+    if(typeChro == 1) {
         type = "Line";
     } else {
         type = "Circle";
     }
 
-    Chromosome chr = Chromosome(nameChr, type);
+    Chromosome chro = Chromosome(chroName, type);
 
     cout << "How many gene contains this chromosome?" << endl;
-    cin >> nbGene;
+    cin >> nombreGene;
 
-    while (nbGene > 0) {
+    while (nombreGene > 0) {
         Gene gene = createGene();
-        chr.addGene(gene);
-        nbGene--;
+        chro.addGene(gene);
+        nombreGene--;
     }
 
-    return chr;
+    return chro;
 }
 
 Eukaryote createEukaryote(){
-    string idCell;
+    int idCell;
     double sizeCell = 0.0;
-    string nameOrgan;
-    int nbProt = 0;
-    int nbChro = 0;
+    string organeName;
+    int nombreProt = 0;
+    int nombreChro = 0;
 
     cout << "Be careful each step is final. Thanks to respect the choices of these questions." << endl;
 
@@ -79,37 +79,37 @@ Eukaryote createEukaryote(){
     cin >> sizeCell;
 
     cout << "Enter the organ's name where is located the cell." << endl;
-    cin >> nameOrgan;
+    cin >> organeName;
 
     // Todo : Refactoriser Fonction
     cout << "How many proteins contains the cell?" << endl;
-    cin >> nbProt;
+    cin >> nombreProt;
 
-    Eukaryote euk(idCell, sizeCell, nameOrgan);
+    Eukaryote eukaryote(idCell, sizeCell, organeName);
 
-    while (nbProt > 0) {
+    while (nombreProt > 0) {
         Protein prot = createProtein();
-        euk.addProtein(prot);
-        nbProt--;
+        eukaryote.addProtein(prot);
+        nombreProt--;
     }
 
     cout << "How many chromosome contains the cell?" << endl;
-    cin >> nbChro;
+    cin >> nombreChro;
 
     while (nbChro > 0) {
-        Chromosome kro = createChromosome();
-        euk.addChromosome(kro);
-        nbChro--;
+        Chromosome chromosome = createChromosome();
+        eukaryote.addChromosome(kro);
+        nombreChro--;
     }
 
-    return euk;
+    return eukaryote;
 }
 
 Prokaryote createProkaryote(){
-    string idCell;
+    int idCell;
     double sizeCell;
-    string nameChromosome;
-    int nbProt = 0;
+    string chromosomeName;
+    int nombrebProt = 0;
 
     cout << "Be careful each step is final. Thanks to respect the choices of these questions." << endl;
 
@@ -119,25 +119,25 @@ Prokaryote createProkaryote(){
     cout << "Enter the size of this cell (micrometer)." << endl;
     cin >> sizeCell;
 
-    Chromosome kro = createChromosome();
+    Chromosome chromosome = createChromosome();
 
     cout << "How many proteins contains this cell? " << endl;
-    cin >> nbProt;
+    cin >> nombrebProt;
 
-    Prokaryote pro(idCell, sizeCell, kro);
+    Prokaryote prokaryote(idCell, sizeCell, chromosome);
 
-    while (nbProt > 0) {
+    while (nombreProt > 0) {
         Protein prot = createProtein();
         pro.addProtein(prot);
-        nbProt--;
+        nombrebProt--;
     }
 
-    return pro;
+    return prokaryote;
 }
 
 
 
-void entryCell(Database bdd){
+void genereCell(Database bdd){
     char answer;
     do{
         cout << "Do you want to insert an eukaryote (E) or a prokaryote (P) cell or return to menu (R)? [E/P/R]" << endl;
@@ -150,7 +150,7 @@ void entryCell(Database bdd){
         }
 
         if (answer == 'e' || answer == 'E') {
-            Eukaryote euk = createEukaryote();
+            Eukaryote eukaryote = createEukaryote();
             bdd.addEukaryote(euk);
         } else {
             if (answer == 'p' || answer == 'P') {

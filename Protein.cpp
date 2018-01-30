@@ -2,7 +2,7 @@
 
 //Constructor
 
-Protein::Protein(string id, string name) {
+Protein::Protein(int id, string name) {
     this->id = id;
     this->name = name;
 }
@@ -14,7 +14,7 @@ string Protein::getIdProtein() const {
     return this->id;
 }
 
-void Protein::setIdProtein(string id) {
+void Protein::setIdProtein(int id) {
     this->id = id;
 }
 

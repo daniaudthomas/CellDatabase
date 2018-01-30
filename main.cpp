@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
     // Todo : Afficher Message si array eukaryote / prokaryote vide
     // Todo : Mettre des sécurités en place
 
-    Database bdd;
+    Repository bdd;
     selectMenu(bdd);
 
     cout <<  getPath() << endl

@@ -2,6 +2,7 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 using namespace nlohmann;
@@ -14,7 +15,7 @@ public:
      * @param id
      * @param name
      */
-    Protein(string id = "", string proteinName = "");
+    Protein(int id = "", string proteinName = "");
 
 
     /**
@@ -28,7 +29,7 @@ public:
      * Set id
      * @param id
      */
-    void setIdProtein(string id);
+    void setIdProtein(int id);
 
 
     /**
@@ -79,7 +80,7 @@ class Protein {
 
 private :
 
-    string id;
+    int id;
     string proteinName;
 
 

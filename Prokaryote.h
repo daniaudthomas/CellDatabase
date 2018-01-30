@@ -49,6 +49,23 @@ public:
     void setBacterimName(string bacteriumName);
 
 
+     /**
+     * Override operator ==
+     * @param pro
+     * @return
+     */
+    bool operator==(Prokaryote pro) const;
+
+};
+
+
+/**
+ * Override operator <<
+ * @param out
+ * @param p
+ * @return
+ */
+ostream & operator<<(ostream &out, const Prokaryote &p);
 
     
 

@@ -8,7 +8,7 @@
 using namespace std;
 using namespace nlohmann;
 
-class Eukaryote
+class Eukaryote : public Cell 
 {
 public:
       /**
@@ -35,6 +35,14 @@ public:
 
 
      /**
+     * Display
+     * @param out
+     */
+    virtual void affiche(ostream & out) const;
+
+
+
+     /**
      * Get List of chromosome
      * @return vector<Chromosome>
      */
@@ -54,6 +62,32 @@ public:
      */
     void addChromosome(Chromosome chromosome);
 
+
+
+    /**
+     * Override operator ==
+     * @param euk
+     * @return bool
+     */
+    bool operator==(Eukaryote eukaryote) const;
+
+
+    /**
+     * Copy Constructor
+     * @param euk
+     */
+    Eukaryote(const Eukaryote& eukaryote);
+
+};
+
+
+    /**
+    * Override operator <<
+    * @param out
+    * @param c
+    * @return
+    */
+    ostream & operator<<(ostream &out, const Eukaryote &e);
 
 
 

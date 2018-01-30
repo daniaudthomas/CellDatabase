@@ -35,14 +35,14 @@ public:
      * Get Name
      * @return string
      */
-    string getNameProtein() const;
+    string getProteinName() const;
 
 
     /**
      * Set name
      * @param name
      */
-    void setNameProtein(string name);
+    void setProteinName(string name);
 
 
     /**

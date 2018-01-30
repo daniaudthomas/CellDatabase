@@ -18,12 +18,12 @@ void Protein::setIdProtein(string id) {
     this->id = id;
 }
 
-void Protein::setNameProtein(string name) {
-    this->name = name;
+string Protein::getProteinName() const {
+    return this->name;
 }
 
-string Protein::getNameProtein() const {
-    return this->name;
+void Protein::setProteinName(string name) {
+    this->name = name;
 }
 
 

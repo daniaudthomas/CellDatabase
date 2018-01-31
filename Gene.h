@@ -4,9 +4,13 @@
 #include <iostream>
 
 using namespace std;
-using namespace nlohmann;
+//using namespace nlohmann;
 
 class Gene {
+
+private:
+    string geneName;
+    string locus;
 
 public:
 
@@ -15,7 +19,7 @@ public:
      * @param nameGene
      * @param locus
      */
-    Gene(string genName = "", string locus = "");
+    Gene(string geneName = "", string locus = "");
 
 
     /**
@@ -78,6 +82,3 @@ public:
 ostream & operator<<(ostream &out, const Gene &g);
 
 
-private:
-    string geneName;
-    string locus;

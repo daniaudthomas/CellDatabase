@@ -2,7 +2,7 @@
 
 //Constructor
 
-Eukaryote::Eukaryote(string id, double size, string organeName): Cell(id, size), organeName(organeName){
+Eukaryote::Eukaryote(int id, double size, string organeName): Cell(id, size), organeName(organeName){
     this->type = "Eukaryote";
 }
 

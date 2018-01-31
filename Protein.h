@@ -5,8 +5,14 @@
 #include <vector>
 
 using namespace std;
-using namespace nlohmann;
+//using namespace nlohmann;
 
+class Protein {
+
+private :
+
+    int id;
+    string proteinName;
 
 public:
 
@@ -15,14 +21,14 @@ public:
      * @param id
      * @param name
      */
-    Protein(int id = "", string proteinName = "");
+    Protein(int id = 0, string proteinName = "");
 
 
     /**
      * Get id
-     * @return string
+     * @return strings
      */
-    string getIdProtein() const;
+    int getIdProtein() const;
 
 
     /**
@@ -64,7 +70,7 @@ public:
      * Copy Constructor
      * @param prot
      */
-    Protein(const Protein& prot) : id(prot.id), name(prot.name){};
+    Protein(const Protein& prot) : id(prot.id), proteinName(prot.proteinName){};
 
 };
 
@@ -76,12 +82,6 @@ public:
  */
 ostream & operator<<(ostream &out, const Protein &p);
 
-class Protein {
-
-private :
-
-    int id;
-    string proteinName;
 
 
 

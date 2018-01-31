@@ -7,7 +7,7 @@ all: exec
 # Quand vous passerez aux exercices suivants, vous changerez la cible
 # pointée par 'all'.
 
-exec: Cell.o Main.o
+exec: Cell.o addCell.o Chromosome.o Eukaryote.o Gene.o menu.o Prokaryote.o Protein.o Repository.o  main.o
 	@g++ $(CFLAGS) -Wall -o $@ $^
 
 # lier l'exécutable 'occurrences' à partir des fichiers objet les .o et

@@ -10,7 +10,7 @@ Cell::Cell(int id, double size) {
 
 // Getter and Setter
 
-string Cell::getIdName() const {
+int Cell::getIdName() const {
     return this->id;
 }
 
@@ -22,11 +22,11 @@ string Cell::getType() const {
     return this->type;
 }
 
-list<Protein> Cell::getProteinList() const {
-    return this->getProteinList;
+vector<Protein> Cell::getProteinList() const {
+    return this->proteinList;
 }
 
-void Cell::setIdName(string idName) {
+void Cell::setIdName(int idName) {
     this->id = idName;
 }
 
@@ -57,7 +57,7 @@ void Cell::affiche(ostream & out) const {
 Cell::Cell(const Cell &cell) {
     this->id = cell.id;
     this->size = cell.size;
-    this->proteinList = cell.proteilList;
+    this->proteinList = cell.proteinList;
 }
 
 

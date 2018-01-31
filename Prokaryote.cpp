@@ -2,7 +2,7 @@
 
 //Constructor
 
-Prokaryote::Prokaryote(string id, double size, Chromosome chromosome): Cell(id, size), chromosomePro(chromosome){
+Prokaryote::Prokaryote(int id, double size, Chromosome chromosome): Cell(id, size), chromosomePro(chromosome){
     this->type = "Prokaryote";//Doute
 };
 

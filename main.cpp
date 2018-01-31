@@ -5,7 +5,7 @@
 #include "menu.h"
 
 
-using namespace nlohmann;
+
 using namespace std;
 
 
@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
     Repository bdd;
     selectMenu(bdd);
 
-    cout <<  getPath() << endl
+    cout <<  getPath() << endl;
 
     return 0;
 }

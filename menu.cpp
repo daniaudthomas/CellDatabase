@@ -5,11 +5,11 @@
 #include <unistd.h>
 
 #include "addCell.h"
-#include "Database.h"
+#include "Repository.h"
 
 #define GetCurrentDir getcwd
 
-using namespace nlohmann;
+
 using namespace std;
 
 
@@ -32,7 +32,7 @@ void displayMenu(){
     cout << " ------------------------------------------------------------------------ " << endl;
 }
 
-void selectMenu(Database bdd) {
+void selectMenu(Repository bdd) {
 
     cout << "\n\n ######################## \n" << endl;
     cout << "   Welcome to CellsDatabase \n" << endl;

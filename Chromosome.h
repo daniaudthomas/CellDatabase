@@ -2,10 +2,10 @@
 
 
 #include <iostream>
-#include <list>
+#include <vector>
 
 
-using namespace nlohmann;
+//using namespace nlohmann;
 using namespace std;
 
 #include "Cell.h"
@@ -16,7 +16,7 @@ class Chromosome {
 private:
     string chromosomeName;
     string type;
-    vector<Gene> genelist;
+    vector<Gene> geneList;
 
 public:
 

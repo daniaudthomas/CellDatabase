@@ -1,15 +1,21 @@
 #pragma once
 
+#include <iostream>
 #include <string>
 #include <vector>
 #include "Cell.h"
 #include "Chromosome.h"
 
 using namespace std;
-using namespace nlohmann;
+//using namespace nlohmann;
 
-class Eukaryote : public Cell 
-{
+class Eukaryote : public Cell {
+
+ private:
+    string organeName;
+    vector<Chromosome> chromosomeList;
+
+
 public:
       /**
      * Constructor
@@ -17,7 +23,7 @@ public:
      * @param size
      * @param OrganeName
      */
-    Eukaryote(string id = "", double size = 0, string organeName = "");
+    Eukaryote(int id = 0, double size = 0, string organeName = "");
 
 
      /**
@@ -96,7 +102,3 @@ public:
 
 
 
-private:
- string organeName;
- vector<chromosome> chromosomeList;
-};

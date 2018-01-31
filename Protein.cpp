@@ -4,13 +4,13 @@
 
 Protein::Protein(int id, string name) {
     this->id = id;
-    this->name = name;
+    this->proteinName = proteinName;
 }
 
 
 // Getter and Setter
 
-string Protein::getIdProtein() const {
+int Protein::getIdProtein() const {
     return this->id;
 }
 
@@ -19,25 +19,25 @@ void Protein::setIdProtein(int id) {
 }
 
 string Protein::getProteinName() const {
-    return this->name;
+    return this->proteinName;
 }
 
 void Protein::setProteinName(string name) {
-    this->name = name;
+    this->proteinName = proteinName;
 }
 
 
 // Display
 
 void Protein::affiche(ostream & out) const {
-    out << "Protein : Id = " << this->id << ", Name = " << this->name << "." << endl;
+    out << "Protein : Id = " << this->id << ", Name = " << this->proteinName << "." << endl;
 }
 
 
 // Override operator
 
 bool Protein::operator==(Protein prot) const {
-    return (this->id == prot.id) && (this->name == prot.name);
+    return (this->id == prot.id) && (this->proteinName == prot.proteinName);
 }
 
 ostream & operator<<(ostream &out, const Protein &p){

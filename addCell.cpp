@@ -96,9 +96,9 @@ Eukaryote createEukaryote(){
     cout << "How many chromosome contains the cell?" << endl;
     cin >> nombreChro;
 
-    while (nbChro > 0) {
+    while (nombreChro > 0) {
         Chromosome chromosome = createChromosome();
-        eukaryote.addChromosome(kro);
+        eukaryote.addChromosome(chromosome);
         nombreChro--;
     }
 
@@ -109,7 +109,7 @@ Prokaryote createProkaryote(){
     int idCell;
     double sizeCell;
     string chromosomeName;
-    int nombrebProt = 0;
+    int nombreProt = 0;
 
     cout << "Be careful each step is final. Thanks to respect the choices of these questions." << endl;
 
@@ -122,14 +122,14 @@ Prokaryote createProkaryote(){
     Chromosome chromosome = createChromosome();
 
     cout << "How many proteins contains this cell? " << endl;
-    cin >> nombrebProt;
+    cin >> nombreProt;
 
     Prokaryote prokaryote(idCell, sizeCell, chromosome);
 
     while (nombreProt > 0) {
         Protein prot = createProtein();
-        pro.addProtein(prot);
-        nombrebProt--;
+        prokaryote.addProtein(prot);
+        nombreProt--;
     }
 
     return prokaryote;
@@ -137,7 +137,7 @@ Prokaryote createProkaryote(){
 
 
 
-void genereCell(Database bdd){
+void genereCell(Repository bdd){
     char answer;
     do{
         cout << "Do you want to insert an eukaryote (E) or a prokaryote (P) cell or return to menu (R)? [E/P/R]" << endl;
@@ -151,7 +151,7 @@ void genereCell(Database bdd){
 
         if (answer == 'e' || answer == 'E') {
             Eukaryote eukaryote = createEukaryote();
-            bdd.addEukaryote(euk);
+            bdd.addEukaryote(eukaryote);
         } else {
             if (answer == 'p' || answer == 'P') {
                 Prokaryote pro = createProkaryote();

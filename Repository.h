@@ -11,10 +11,15 @@
 
 
 
-using namespace nlohmann;
+//using namespace nlohmann;
 using namespace std;
 
 class Repository {
+
+private:
+    vector<Eukaryote> eukaryoteList;
+    vector<Prokaryote> prokaryoteList;
+
 
 public:
 
@@ -36,7 +41,7 @@ public:
      * Get array Prokaryote
      * @return list<Prokaryote>
      */
-    vector<Prokaryote> setProkaryoteList() const ;
+    vector<Prokaryote> getProkaryoteList() const ;
 
 
     /**
@@ -87,8 +92,6 @@ public:
     */
     virtual void affiche(ostream & out) const;
 
-};
-
 
 /**
  * Override operator <<
@@ -96,7 +99,6 @@ public:
  * @param d
  * @return
  */
-ostream & operator<<(ostream &out, const Database &d);
 
  /**
      * Display Cell by Id
@@ -161,20 +163,20 @@ ostream & operator<<(ostream &out, const Database &d);
      * Display all Prokaryote having a chromosome with a defined gene
      * @param idGene
      */
-    void displayProkaryoteHavingChromosomeExprimedGene(int idGene);
+   // void displayProkaryoteHavingChromosomeExprimedGene(int idGene);
 
     /**
      * Display all Eukaryote having a chromosome with a defined gene
      * @param idGene
      */
-    void displayEukaryoteHavingChromosomeExprimedGene(int idGene);
+    //void displayEukaryoteHavingChromosomeExprimedGene(int idGene);
 
 
 
     /**
      * Display all Cell sort by size
      */
-    void displayCellBySize();
+    // void displayCellBySize();
 
 
 };
@@ -186,7 +188,7 @@ ostream & operator<<(ostream &out, const Database &d);
  * @param d
  * @return
  */
-ostream & operator<<(ostream &out, const Database &d);
+ostream & operator<<(ostream &out, const Repository &d);
 
 
 
@@ -197,6 +199,3 @@ ostream & operator<<(ostream &out, const Database &d);
 
 
 
-private:
-    vector<Eukaryote> eukaryoteList;
-    vector<Prokaryote> prokaryoteList;

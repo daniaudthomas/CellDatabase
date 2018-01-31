@@ -5,8 +5,8 @@
 #include <string>
 #include <iostream>
 #include "Protein.h"
-
-using namespace nlohmann;
+#include <vector>
+//using namespace nlohmann;
 using namespace std;
 
 class Cell {
@@ -24,14 +24,14 @@ public:
      * @param id
      * @param size
      */
-    Cell(string id = "", double size = 0);
+    Cell(int id = 0, double size = 0);
 
 
     /**
      * Get Id Cell
      * @return idName
      */
-    string getIdName() const;
+    int getIdName() const;
 
 
     /**
@@ -45,7 +45,7 @@ public:
      * Set IdName
      * @param IdName
      */
-    void setIdName(string idName);
+    void setIdName(int idName);
 
 
     /**

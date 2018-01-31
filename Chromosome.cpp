@@ -2,8 +2,8 @@
 
 //Constructor
 
-Chromosome::Chromosome(string ChromosomeName, string type) {
-    this->ChromosomeName = chromosomeName;
+Chromosome::Chromosome(string chromosomeName, string type) {
+    this->chromosomeName = chromosomeName;
     this->type = type;
 }
 
@@ -18,7 +18,7 @@ string Chromosome::getType() const {
     return  this->type;
 }
 
-list<Gene> Chromosome::getGeneList() const {
+vector<Gene> Chromosome::getGeneList() const {
     return this->geneList;
 }
 
@@ -27,7 +27,7 @@ void Chromosome::setType(string type) {
 }
 
 void Chromosome::setChromosomeName(string ChromosomeName) {
-    this->chromosomeName = getChromosomeName;
+    this->chromosomeName = chromosomeName;
 }
 
 void Chromosome::setGeneList(vector<Gene> geneList) {
@@ -56,7 +56,7 @@ void Chromosome::affiche(ostream & out) const {
 
 // Copy Constructor
 
-Chromosome::Chromosome(const Chromosome& ChromosomeName){
+Chromosome::Chromosome(const Chromosome& chromosome){
     this->chromosomeName = chromosome.chromosomeName;
     this->type = chromosome.type;
     this->geneList = chromosome.geneList;

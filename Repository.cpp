@@ -11,8 +11,8 @@ void Repository::setEukaryoteList(vector<Eukaryote> eukaryoteList) {
     this->eukaryoteList = eukaryoteList;
 }
 
-vector<Prokaryote> Repository::getProkaryotelist() const {
-    return this->prokayoteList;
+vector<Prokaryote> Repository::getProkaryoteList() const {
+    return this->prokaryoteList;
 }
 
 void Repository::setProkaryoteList(vector<Prokaryote> prokaryoteList) {
@@ -97,7 +97,7 @@ void Repository::displayProkaryoteById(int id){
 
 void Repository::displayOnlyEukaryote() {
     if ( !this->eukaryoteList.empty() ) {
-        list<Eukaryote>::iterator it = eukaryoteList.begin();
+        vector<Eukaryote>::iterator it = eukaryoteList.begin();
         while (it != this->eukaryoteList.end()){
             cout << *it << endl;
             it++;
@@ -106,7 +106,7 @@ void Repository::displayOnlyEukaryote() {
 }
 
 void Repository::displayOnlyProkaryote() {
-    if ( !this->arrayProkaryote.empty() /*&& existCell*/) {
+    if ( !this->prokaryoteList.empty() /*&& existCell*/) {
         vector<Prokaryote>::iterator it = prokaryoteList.begin();
         while (it != this->prokaryoteList.end()){
             cout << *it << endl;
@@ -133,90 +133,90 @@ void Repository::displayProkaryoteSizeBetween(double min, double max) {
     }
 }
 
-void Repository::displayEukaryoteSizeBetween(double min, double max) {
-    if (!this->eukaryoteList.empty()) {
-        vector<Eukaryote>::iterator itEukaryote = eukaryoteList.begin();
+// void Repository::displayEukaryoteSizeBetween(double min, double max) {
+//     if (!this->eukaryoteList.empty()) {
+//         vector<Eukaryote>::iterator itEukaryote = eukaryoteList.begin();
 
-        while (itEukaryote != this->eukaryoteList.end()){
-            if (itEukaryote->getSize() >= min && itEukaryote->getSize() <= max) {
-                cout << *itEukaryote << endl;
-            }
-            itEukaryote++;
-        }
-    }
-}
-
-
-void Repository::displayProkaryoteHavingChromosomeExprimedGene(int idGene) {
-    if ( !this->prokaryoteList.empty()) {
-        for ( auto const& pro : prokaryoteList){
-            if (pro.getChromosome().getChromosomeName() == "") {
-            } else{
-                for ( auto const& gene : pro.getChromosome().getGeneList()){
-                    if (gene.getGeneName() == idGene){
-                        cout << pro << endl;
-                    }
-                }
-            }
-        }
-    }
-}
+//         while (itEukaryote != this->eukaryoteList.end()){
+//             if (itEukaryote->getSize() >= min && itEukaryote->getSize() <= max) {
+//                 cout << *itEukaryote << endl;
+//             }
+//             itEukaryote++;
+//         }
+//     }
+// }
 
 
-void Repository::displayEukaryoteHavingChromosomeExprimedGene(int idGene) {
-    if ( !this->eukaryoteList.empty()) {
-        for ( auto const& euk : eukaryoteList){
-            if (!euk.getChromosomeList().empty()) {
-                for ( auto const& Chromosome : eukaryote.getChromosomeList()){
-                    if (!chromosome.getGeneList().empty() ){
-                        for ( auto const& gene : chromosome.getGeneList()){
-                            if (gene.getGeneName() == idGene){
-                                cout << =eukaryote << endl;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+// void Repository::displayProkaryoteHavingChromosomeExprimedGene(int idGene) {
+//     if ( !this->prokaryoteList.empty()) {
+//         for ( auto const& pro : prokaryoteList){
+//             if (pro.getChromosome().getChromosomeName() == "") {
+//             } else{
+//                 for ( auto const& gene : pro.getChromosome().getGeneList()){
+//                     if (gene.getGeneName() == idGene){
+//                         cout << pro << endl;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+// void Repository::displayEukaryoteHavingChromosomeExprimedGene(int idGene) {
+//     if ( !this->eukaryoteList.empty()) {
+//         for ( auto const& eukaryote : eukaryoteList){
+//             if (!eukaryote.getChromosomeList().empty()) {
+//                 for ( auto const& chromosome : eukaryote.getChromosomeList()){
+//                     if (!chromosome.getGeneList().empty() ){
+//                         for ( auto const& gene : chromosome.getGeneList()){
+//                             if (gene.getGeneName() == idGene){
+//                                 cout << eukaryote << endl;
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 
 
 
-void Repository::displayCellHavingChromosomeExprimedGene(int idGene) {
-    displayProkaryoteHavingChromosomeExprimedGene(idGene);
-    displayEukaryoteHavingChromosomeExprimedGene(idGene);
-}
+// void Repository::displayCellHavingChromosomeExprimedGene(int idGene) {
+//     displayProkaryoteHavingChromosomeExprimedGene(idGene);
+//     displayEukaryoteHavingChromosomeExprimedGene(idGene);
+// }
 
-bool cellsCp(Cell* cell, Cell* cellBis) {
-    return cell->getSize() < cellBis->getSize();
-}
+// bool cellsCp(Cell* cell, Cell* cellBis) {
+//     return cell->getSize() < cellBis->getSize();
+// }
 
 
-void Repository::displayCellBySize() {
-    vector<Cell*> cellList;
+// void Repository::displayCellBySize() {
+//     vector<Cell*> cellList;
 
-    if ( !this->prokaryoteList.empty()) {
-        for (auto &prokaryote : prokaryoteList) {
-            cellList.push_back(&prokaryote);
-        }
-    }
+//     if ( !this->prokaryoteList.empty()) {
+//         for (auto &prokaryote : prokaryoteList) {
+//             cellList.push_back(&prokaryote);
+//         }
+//     }
 
-    if ( !this->eukaryoteList.empty()) {
-        for (auto &euk : eukaryoteList) {
-            cellList.push_back(&eukaryote);
-        }
-    }
+//     if ( !this->eukaryoteList.empty()) {
+//         for (auto &eukaryote : eukaryoteList) {
+//             cellList.push_back(&eukaryote);
+//         }
+//     }
 
-    cellList.sort(cellsCp);
-    if ( !cellList.empty()) {
-        for (auto const &cell : cellList) {
-            cout << *cell << endl;
-        }
-    }
+//     cellList.sort(cellsCp);
+//     if ( !cellList.empty()) {
+//         for (auto const &cell : cellList) {
+//             cout << *cell << endl;
+//         }
+//     }
 
-    cellList.clear();
-}
+//     cellList.clear();
+// }
 
 void Repository::affiche(ostream & out) const {
     out << " ---- Repository ----- " << endl;
